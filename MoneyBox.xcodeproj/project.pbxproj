@@ -16,6 +16,13 @@
 		B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA47662794D69A0041B3A5 /* StubData.swift */; };
 		B2CA47712794D8E50041B3A5 /* LoginSucceed.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CA47692794D6D70041B3A5 /* LoginSucceed.json */; };
 		B2CA47B42796052F0041B3A5 /* Accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = B2CA47B2279604A10041B3A5 /* Accounts.json */; };
+		D4D240A32B8CF41F006A28E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240A22B8CF41F006A28E1 /* LoginViewModel.swift */; };
+		D4D240A82B8CFA76006A28E1 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240A72B8CFA76006A28E1 /* AuthServices.swift */; };
+		D4D240AB2B8CFB5E006A28E1 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240AA2B8CFB5E006A28E1 /* LoginViewModelTests.swift */; };
+		D4D240AD2B8D3021006A28E1 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240AC2B8D3021006A28E1 /* ProductsViewController.swift */; };
+		D4D240AF2B8D304C006A28E1 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */; };
+		D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B02B8D3355006A28E1 /* ProductsServices.swift */; };
+		D4D240B32B8D35E5006A28E1 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,13 @@
 		B2CA47662794D69A0041B3A5 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 		B2CA47692794D6D70041B3A5 /* LoginSucceed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LoginSucceed.json; sourceTree = "<group>"; };
 		B2CA47B2279604A10041B3A5 /* Accounts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Accounts.json; sourceTree = "<group>"; };
+		D4D240A22B8CF41F006A28E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D4D240A72B8CFA76006A28E1 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		D4D240AA2B8CFB5E006A28E1 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		D4D240AC2B8D3021006A28E1 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		D4D240B02B8D3355006A28E1 /* ProductsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServices.swift; sourceTree = "<group>"; };
+		D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +98,11 @@
 		B2CA46CA279350880041B3A5 /* MoneyBox */ = {
 			isa = PBXGroup;
 			children = (
-				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
-				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
+				D4D2409C2B8CC6D2006A28E1 /* Services */,
+				D4D240A42B8CF4A6006A28E1 /* Features */,
 				B2CA46CB279350880041B3A5 /* AppDelegate.swift */,
 				B2CA46D42793508A0041B3A5 /* Assets.xcassets */,
+				B228EA6A2880B30B00B35F16 /* Login.storyboard */,
 				B2CA46D62793508A0041B3A5 /* LaunchScreen.storyboard */,
 				B2CA46D92793508A0041B3A5 /* Info.plist */,
 			);
@@ -99,6 +114,7 @@
 			children = (
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
 				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
+				D4D240AA2B8CFB5E006A28E1 /* LoginViewModelTests.swift */,
 			);
 			path = MoneyBoxTests;
 			sourceTree = "<group>";
@@ -118,6 +134,43 @@
 				B24EED92288ED5740016C233 /* Networking */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		D4D2409C2B8CC6D2006A28E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4D240A72B8CFA76006A28E1 /* AuthServices.swift */,
+				D4D240B02B8D3355006A28E1 /* ProductsServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D4D240A42B8CF4A6006A28E1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D4D240A62B8CF4D3006A28E1 /* Products */,
+				D4D240A52B8CF4B0006A28E1 /* Auth */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D4D240A52B8CF4B0006A28E1 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D4D240A22B8CF41F006A28E1 /* LoginViewModel.swift */,
+				B228EA692880B30B00B35F16 /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D4D240A62B8CF4D3006A28E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */,
+				D4D240AC2B8D3021006A28E1 /* ProductsViewController.swift */,
+				D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D240AF2B8D304C006A28E1 /* ProductsViewModel.swift in Sources */,
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
+				D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */,
+				D4D240A32B8CF41F006A28E1 /* LoginViewModel.swift in Sources */,
+				D4D240A82B8CFA76006A28E1 /* AuthServices.swift in Sources */,
+				D4D240B32B8D35E5006A28E1 /* ProductCardView.swift in Sources */,
+				D4D240AD2B8D3021006A28E1 /* ProductsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D240AB2B8CFB5E006A28E1 /* LoginViewModelTests.swift in Sources */,
 				B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

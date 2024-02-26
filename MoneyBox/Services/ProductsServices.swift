@@ -11,7 +11,7 @@ import Networking
 protocol ProductsViewModelProtocol {
     var products: [ProductResponse]? { get }
     var totalPlanValue: Double? { get }
-    var state: AllProductsModelState { get }
+    var state: ProductsModelState { get }
     var updatedState: (() -> Void)? { get set }
     
     func getProducts()

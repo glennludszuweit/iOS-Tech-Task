@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol LoginViewModelProtocol {
+    func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void)
+    func validateUser(email: String?, pass: String?) -> Bool
+}
