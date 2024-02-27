@@ -2,7 +2,8 @@
 # Moneybox iOS Technical Challenge
 
 ## Solution
-![MoneyBox-Light](moneybox-light.gif)
+<!-- ![MoneyBox-Light](moneybox-light.gif) -->
+<img src="moneybox-light.gif" height="500">
 
 
 In this solution, I've implemented a basic iOS application following the MVVM (Model-View-ViewModel) pattern to manage the UI and business logic separately. Here's a summary of the achieved tasks:
