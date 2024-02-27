@@ -66,6 +66,13 @@ class ProductsViewController: UIViewController {
         viewModel.getProducts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Refresh data when the view will appear
+        viewModel.getProducts()
+    }
+
+    
     private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(headerView)

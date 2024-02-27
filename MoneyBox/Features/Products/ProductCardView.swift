@@ -9,7 +9,16 @@ import UIKit
 import Networking
 
 class ProductCardView: UIView {
-    private var product: ProductResponse
+    private var product: ProductResponse? {
+        didSet {
+            if product != nil {
+                hideLoading()
+            } else {
+                showLoading()
+            }
+            configure(with: product)
+        }
+    }
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -34,10 +43,21 @@ class ProductCardView: UIView {
         return label
     }()
     
-    init(product: ProductResponse) {
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
+    init(product: ProductResponse?) {
         self.product = product
         super.init(frame: .zero)
         setupViews()
+        if product == nil {
+            showLoading()
+        } else {
+            hideLoading()
+        }
         configure(with: product)
         setupTapGesture()
     }
@@ -54,6 +74,7 @@ class ProductCardView: UIView {
         addSubview(titleLabel)
         addSubview(planValueLabel)
         addSubview(moneyboxValueLabel)
+        addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
@@ -67,16 +88,25 @@ class ProductCardView: UIView {
             moneyboxValueLabel.topAnchor.constraint(equalTo: planValueLabel.bottomAnchor, constant: 5),
             moneyboxValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             moneyboxValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            moneyboxValueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            moneyboxValueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
-    private func configure(with product: ProductResponse) {
-        titleLabel.text = product.product?.friendlyName
-        
-        if let planValue = product.moneybox, let moneybox = product.planValue {
-            planValueLabel.text = "Plan value: £\(String(planValue))"
-            moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
+    private func configure(with product: ProductResponse?) {
+        if let product = product {
+            titleLabel.text = product.product?.friendlyName
+            
+            if let planValue = product.planValue, let moneybox = product.moneybox {
+                planValueLabel.text = "Plan value: £\(String(planValue))"
+                moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
+            }
+        } else {
+            titleLabel.text = "Loading..."
+            planValueLabel.text = nil
+            moneyboxValueLabel.text = nil
         }
     }
     
@@ -88,10 +118,25 @@ class ProductCardView: UIView {
     
     @objc private func handleTap() {
         // Navigate to ProductDetailViewController
-        let productDetailVC = ProductDetailViewController(product: product)
-        if let topViewController = UIApplication.topViewController() {
-            topViewController.navigationController?.pushViewController(productDetailVC, animated: true)
+        if let product = product {
+            let productDetailVC = ProductDetailViewController(product: product)
+            if let topViewController = UIApplication.topViewController() {
+                topViewController.navigationController?.pushViewController(productDetailVC, animated: true)
+            }
         }
     }
+    
+    private func showLoading() {
+        activityIndicator.startAnimating()
+        titleLabel.isHidden = true
+        planValueLabel.isHidden = true
+        moneyboxValueLabel.isHidden = true
+    }
+    
+    private func hideLoading() {
+        activityIndicator.stopAnimating()
+        titleLabel.isHidden = false
+        planValueLabel.isHidden = false
+        moneyboxValueLabel.isHidden = false
+    }
 }
-

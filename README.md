@@ -1,6 +1,9 @@
 
 # Moneybox iOS Technical Challenge
 
+## Solution
+<video src='moneybox-light.mp4' height={500} />
+
 ## The Brief
 
 To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance, as well as viewing their Moneybox savings. 
