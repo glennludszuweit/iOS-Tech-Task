@@ -2,6 +2,9 @@
 # Moneybox iOS Technical Challenge
 
 ## Solution
+![MoneyBox-Light](moneybox-light.gif)
+
+
 In this solution, I've implemented a basic iOS application following the MVVM (Model-View-ViewModel) pattern to manage the UI and business logic separately. Here's a summary of the achieved tasks:
 
 Login Functionality: Implemented a login screen with email and password fields using a LoginViewController and LoginViewModel. The ViewModel handles the business logic for validating user credentials and making login requests.
