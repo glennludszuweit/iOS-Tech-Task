@@ -23,6 +23,7 @@
 		D4D240AF2B8D304C006A28E1 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */; };
 		D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B02B8D3355006A28E1 /* ProductsServices.swift */; };
 		D4D240B32B8D35E5006A28E1 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */; };
+		D4D240B52B8DCCAA006A28E1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B42B8DCCAA006A28E1 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		D4D240B02B8D3355006A28E1 /* ProductsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServices.swift; sourceTree = "<group>"; };
 		D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		D4D240B42B8DCCAA006A28E1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				D4D240AE2B8D304C006A28E1 /* ProductsViewModel.swift */,
-				D4D240AC2B8D3021006A28E1 /* ProductsViewController.swift */,
 				D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */,
+				D4D240AC2B8D3021006A28E1 /* ProductsViewController.swift */,
+				D4D240B42B8DCCAA006A28E1 /* ProductDetailViewController.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				D4D240AF2B8D304C006A28E1 /* ProductsViewModel.swift in Sources */,
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
+				D4D240B52B8DCCAA006A28E1 /* ProductDetailViewController.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
 				D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */,
 				D4D240A32B8CF41F006A28E1 /* LoginViewModel.swift in Sources */,

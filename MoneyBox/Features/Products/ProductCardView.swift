@@ -9,6 +9,8 @@ import UIKit
 import Networking
 
 class ProductCardView: UIView {
+    private var product: ProductResponse
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -33,9 +35,11 @@ class ProductCardView: UIView {
     }()
     
     init(product: ProductResponse) {
+        self.product = product
         super.init(frame: .zero)
         setupViews()
         configure(with: product)
+        setupTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -78,6 +82,20 @@ class ProductCardView: UIView {
             if let moneybox = product.moneybox {
                 moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
             }
+        }
+    }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        addGestureRecognizer(tapGesture)
+        isUserInteractionEnabled = true
+    }
+    
+    @objc private func handleTap() {
+        // Navigate to ProductDetailViewController
+        let productDetailVC = ProductDetailViewController(product: product)
+        if let topViewController = UIApplication.topViewController() {
+            topViewController.navigationController?.pushViewController(productDetailVC, animated: true)
         }
     }
 }
