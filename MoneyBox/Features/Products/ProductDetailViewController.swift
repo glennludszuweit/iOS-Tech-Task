@@ -42,8 +42,17 @@ class ProductDetailViewController: UIViewController {
             planValueLabel.text = "Plan value: £\(String(planValue))"
         }
         
+        let moneyboxValueLabel = UILabel()
+        moneyboxValueLabel.font = UIFont.systemFont(ofSize: 16)
+        moneyboxValueLabel.numberOfLines = 0
+        moneyboxValueLabel.translatesAutoresizingMaskIntoConstraints = false
+        if let moneybox = product.moneybox {
+            moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
+        }
+        
         view.addSubview(titleLabel)
         view.addSubview(planValueLabel)
+        view.addSubview(moneyboxValueLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -52,24 +61,11 @@ class ProductDetailViewController: UIViewController {
             
             planValueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             planValueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            planValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            planValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            moneyboxValueLabel.topAnchor.constraint(equalTo: planValueLabel.bottomAnchor, constant: 20),
+            moneyboxValueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            moneyboxValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-    }
-}
-
-extension UIApplication {
-    class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let navigationController = controller as? UINavigationController {
-            return topViewController(controller: navigationController.visibleViewController)
-        }
-        if let tabController = controller as? UITabBarController {
-            if let selected = tabController.selectedViewController {
-                return topViewController(controller: selected)
-            }
-        }
-        if let presented = controller?.presentedViewController {
-            return topViewController(controller: presented)
-        }
-        return controller
     }
 }

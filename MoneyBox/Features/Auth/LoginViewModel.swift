@@ -8,10 +8,6 @@
 import UIKit
 import Networking
 
-actor AppUser {
-    static var user: LoginResponse.User?
-}
-
 final class LoginViewModel: LoginViewModelProtocol {
     private let dataProvider: DataProvider
     private let sessionManager: SessionManager

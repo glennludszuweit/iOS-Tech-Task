@@ -24,6 +24,9 @@
 		D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B02B8D3355006A28E1 /* ProductsServices.swift */; };
 		D4D240B32B8D35E5006A28E1 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */; };
 		D4D240B52B8DCCAA006A28E1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B42B8DCCAA006A28E1 /* ProductDetailViewController.swift */; };
+		D4D240B72B8DE5BE006A28E1 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B62B8DE5BE006A28E1 /* AppUser.swift */; };
+		D4D240B92B8DE720006A28E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240B82B8DE720006A28E1 /* Extensions.swift */; };
+		D4D240BB2B8DEEA5006A28E1 /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D240BA2B8DEEA5006A28E1 /* ProductsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		D4D240B02B8D3355006A28E1 /* ProductsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServices.swift; sourceTree = "<group>"; };
 		D4D240B22B8D35E5006A28E1 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		D4D240B42B8DCCAA006A28E1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		D4D240B62B8DE5BE006A28E1 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		D4D240B82B8DE720006A28E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D4D240BA2B8DEEA5006A28E1 /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
 				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 				D4D240AA2B8CFB5E006A28E1 /* LoginViewModelTests.swift */,
+				D4D240BA2B8DEEA5006A28E1 /* ProductsViewModelTests.swift */,
 			);
 			path = MoneyBoxTests;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 			children = (
 				D4D240A72B8CFA76006A28E1 /* AuthServices.swift */,
 				D4D240B02B8D3355006A28E1 /* ProductsServices.swift */,
+				D4D240B62B8DE5BE006A28E1 /* AppUser.swift */,
+				D4D240B82B8DE720006A28E1 /* Extensions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -285,11 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D240AF2B8D304C006A28E1 /* ProductsViewModel.swift in Sources */,
+				D4D240B92B8DE720006A28E1 /* Extensions.swift in Sources */,
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
 				D4D240B52B8DCCAA006A28E1 /* ProductDetailViewController.swift in Sources */,
 				B228EA6B2880B30B00B35F16 /* LoginViewController.swift in Sources */,
 				D4D240B12B8D3355006A28E1 /* ProductsServices.swift in Sources */,
 				D4D240A32B8CF41F006A28E1 /* LoginViewModel.swift in Sources */,
+				D4D240B72B8DE5BE006A28E1 /* AppUser.swift in Sources */,
 				D4D240A82B8CFA76006A28E1 /* AuthServices.swift in Sources */,
 				D4D240B32B8D35E5006A28E1 /* ProductCardView.swift in Sources */,
 				D4D240AD2B8D3021006A28E1 /* ProductsViewController.swift in Sources */,
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D240BB2B8DEEA5006A28E1 /* ProductsViewModelTests.swift in Sources */,
 				D4D240AB2B8CFB5E006A28E1 /* LoginViewModelTests.swift in Sources */,
 				B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */,
 			);

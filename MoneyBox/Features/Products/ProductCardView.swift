@@ -63,7 +63,6 @@ class ProductCardView: UIView {
             planValueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             planValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             planValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            planValueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             moneyboxValueLabel.topAnchor.constraint(equalTo: planValueLabel.bottomAnchor, constant: 5),
             moneyboxValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -73,15 +72,11 @@ class ProductCardView: UIView {
     }
     
     private func configure(with product: ProductResponse) {
-        titleLabel.text = product.product?.name
-        if #available(iOS 15.0, *) {
-            if let planValue = product.planValue {
-                planValueLabel.text = "Plan value: £\(String(planValue))"
-            }
-            
-            if let moneybox = product.moneybox {
-                moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
-            }
+        titleLabel.text = product.product?.friendlyName
+        
+        if let planValue = product.moneybox, let moneybox = product.planValue {
+            planValueLabel.text = "Plan value: £\(String(planValue))"
+            moneyboxValueLabel.text = "Moneybox: £\(String(moneybox))"
         }
     }
     
