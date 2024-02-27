@@ -2,72 +2,18 @@
 # Moneybox iOS Technical Challenge
 
 ## Solution
-<video src='moneybox-light.mp4' height={500} />
+In this solution, I've implemented a basic iOS application following the MVVM (Model-View-ViewModel) pattern to manage the UI and business logic separately. Here's a summary of the achieved tasks:
 
-## The Brief
+Login Functionality: Implemented a login screen with email and password fields using a LoginViewController and LoginViewModel. The ViewModel handles the business logic for validating user credentials and making login requests.
 
-To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance, as well as viewing their Moneybox savings. 
-- To fork this repository to your private repository and implement the solution.
- 
-### The app should have
-- A login screen to allow existing users to sign in
-- A screen to show the accounts the user holds, e.g. ISA, GIA
-- A screen to show some details of the account, including a simple button to add money to its moneybox.
-- The button will add a fixed amount of £10. It should use the `POST /oneoffpayments` endpoint provided, and the account's Moneybox amount would be updated.
+Products Display: Created a ProductsViewController and ProductsViewModel to display a list of products. The ViewModel fetches product data from the backend using a DataProvider and updates the UI accordingly.
 
-A prototype wireframe of all 3 screens is provided as a guideline. You are free to provide additional information if you wish.
-![](wireframe.png)
+Product Detail View: Implemented a ProductDetailViewController to display detailed information about a selected product. Added functionality to navigate to this detail view from the products list.
 
-### What we are looking for
- - **Showcase what you can do. It can be a refined UI, or enhanced UX, or use of specific design patterns in the code, or anything that can make the project stand out.**
- - Demonstration of coding style, conventions and patterns.
- - A tidy code organisation.
- - Use of autolayout and UIKit.
- - Implementation of unit tests.
- - Any accessibility feature would be a bonus.
- - The application must run on iOS 15 or later.
- - Any 3rd party library should be integrated using Swift Package Manager.
+Add Money Feature: Added a button in the ProductDetailViewController to add £10 to the moneybox value of the selected product. This button triggers an API request to update the moneybox value.
 
-### API Usage
-The Networking methods and Models for requests and responses are ready-made in the Networking module of the project.
+UI Styling: Applied UI styling to the various components, including buttons, labels, and text fields, to improve the overall look and feel of the application.
 
-#### Base URL & Test User
-The base URL for the moneybox sandbox environment is `https://api-test02.moneyboxapp.com/`. </br>
-You can log in using the following user:
+Loading States: Incorporated loading states to indicate when data is being fetched from the backend, providing better feedback to the user.
 
-|  Username          | Password         |
-| ------------- | ------------- |
-| test+ios2@moneyboxapp.com  | P455word12  |
-
-#### Authentication
-You should obtain a bearer token from the Login response, and attach it as an Authorization header for the endpoints. Helper methods in the API/Base folder should be used for that.
-(Note: The BearerToken has a sliding expiration of 5 mins).
-
-| Key  |  Value  |
-| ------------- | ------------- |
-| Authorization |  Bearer TsMWRkbrcu3NGrpf84gi2+pg0iOMVymyKklmkY0oI84= |
-
-#### API Call Hint
-
-```
-let dataProvider = DataProvider()
-dataProvider.login(request: request, completion: completion)
-```
-request: Initialize your request model </br>
-Completion: Handle your API success and failure cases
-
-## Unit Tests
-The MoneyBoxTests folder includes stubbed data to easily mock the responses needed for unit testing
-
-#### Usage Hint
-You can create a DataProviderMock class via inject DataProviderLogic protocol </br>
-You can mock response in Login.json file like this:
-```
-StubData.read(file: "Login", callback: completion)
-```
-
-### How to Submit your solution:
- - To share your Github repository with the user valerio-bettini.
- - (Optional) Provide a readme in markdown which outlines your solution.
-
-## Good luck!
+Overall, while the solution may not be optimal and there is room for improvement, it demonstrates the basic implementation of MVVM architecture in Swift for an iOS application, covering essential features such as login, data fetching, navigation, and API integration.
